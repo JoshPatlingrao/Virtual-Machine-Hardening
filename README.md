@@ -262,7 +262,7 @@ Steps
 - Open the 'system-auth' file with a text editor
 - Write 'password required pam_cracklib.so retry=2 minlen=10 difok=6 dcredit=-1 ucredit=-1 ocredit=-1 lcredit=-1' in the 'password' section
 - Modify the 'password required pam_unix.so sha512 shadow nullok rounds=50000' to 'password required pam_unix.so use_authtok sha512 shadow nullok rounds=50000'
-  - The use_authtok enforces these password policies when changing the password
+  - The 'use_authtok' instructs the pam_unix module to not prompt for a password but use the one provided by pam_quality which has these policies enforced
 - Save
 
 PAM is a framework for system-wide user authentication and can be used to enforce password policies throughout the system. These are the parameters I’ve set:
