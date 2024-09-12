@@ -256,6 +256,15 @@ Core dumps contain the recorded state of the working memory of a program at a sp
 #### 4.6 PAM
 
 This configuration file is to configure the PAM.
+
+Steps
+- Navigate to '/etc/pam.d/' directory
+- Open the 'system-auth' file with a text editor
+- Write 'password required pam_cracklib.so retry=2 minlen=10 difok=6 dcredit=-1 ucredit=-1 ocredit=-1 lcredit=-1' in the 'password' section
+- Modify the 'password required pam_unix.so sha512 shadow nullok rounds=50000' to 'password required pam_unix.so use_authtok sha512 shadow nullok rounds=50000'
+  - The use_authtok enforces these password policies when changing the password
+- Save
+
 PAM is a framework for system-wide user authentication and can be used to enforce password policies throughout the system. These are the parameters I’ve set:
 - retry: set to 3 so it gives the user 3 times to enter their password in case of mistakes
 - minlen:  makes the user set a password with a minimum length of 10 characters
@@ -263,7 +272,7 @@ PAM is a framework for system-wide user authentication and can be used to enforc
 - dcredit: enforces at least 1 digit
 - ucredit: enforces at least 1 uppercase letter
 - lcredit: enforces at least 1 lowercase letter
-- ocredit: enforces at least 1 toerh character
+- ocredit: enforces at least 1 other character
 - badwords: ensures words like ‘myservice’ and ‘mydomain’ can’t be included in passwords
   
 Due to updates in NIST’s password guidelines, usage of at least 1 special character is no longer enforced but is still optional. This is due to human behaviour which often leads to usage of special characters which can make it easier for attackers to predict or crack.
