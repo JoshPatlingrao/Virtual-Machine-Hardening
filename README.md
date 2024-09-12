@@ -311,4 +311,4 @@ A system can never be fully secure, there will always be zero-day vulnerabilitie
 - Disable/remove protocols, applications and files you don't need.
 - Develop strong password policies through NIST guidelines.
 - Regularly update systems to patch out vulnerabilities.
-- Be mindful of information which could compromise your system.
+- Be mindful of information which could be used to compromise your system.
