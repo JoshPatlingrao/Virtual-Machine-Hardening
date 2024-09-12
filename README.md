@@ -272,11 +272,27 @@ Due to updates in NIST’s password guidelines, usage of at least 1 special char
 
 This configuration file is to disable uncommon network protocols.
 
+Steps
+- Navigate to '/etc/modprobe.d/' directory
+- Create a file and name it 'uncommon-network-protocols.conf'
+- Open the file with a text editor
+- Write the command in this format 'install protocol_name /bin/true', where 'protocol_name' is replaced with the uncommon protocol
+  - dccp, sctp, rds, tipc, n-hdlc, ax25, netrom, x25, rose, decnet, econet, af_802154, ipx, appletalk, psnap, p8023, llc, p8022
+- Save
+
 The kernel allows unprivileged users to load certain vulnerable modules through module auto-loading which increases the attack surface as these modules have known exploits. To decrease the attack surface, uncommon or rarely used network protocols will be blacklisted.
 
 #### 4.8 Disable Mounting of Uncommon Filesystems
 
 This configuration file is to disable uncommon filesystems.
+
+Steps
+- Navigate to '/etc/modprobe.d/' directory
+- Create a file and name it 'uncommon-filesystems.conf'
+- Open the file with a text editor
+- Write the command in this format 'install filesystem_name /bin/true', where 'filesystem_name' is replaced with the uncommon filesystem
+  - cramfs, freevxfs, jffs2, hfs, hfsplus, squashfs, udf
+- Save
 
 These filesystems are rarely used and will be disabled to reduce further vulnerabilities and attack surfaces of the computer.
 ### 5. Best Practices
