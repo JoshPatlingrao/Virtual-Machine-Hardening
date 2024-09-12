@@ -268,9 +268,15 @@ PAM is a framework for system-wide user authentication and can be used to enforc
   
 Due to updates in NIST’s password guidelines, usage of at least 1 special character is no longer enforced but is still optional. This is due to human behaviour which often leads to usage of special characters which can make it easier for attackers to predict or crack.
 
-
 #### 4.7 Blacklist Uncommon Network Protocols
+
+This configuration file is to disable uncommon network protocols.
+
+The kernel allows unprivileged users to load certain vulnerable modules through module auto-loading which increases the attack surface as these modules have known exploits. To decrease the attack surface, uncommon or rarely used network protocols will be blacklisted.
 
 #### 4.8 Disable Mounting of Uncommon Filesystems
 
+This configuration file is to disable uncommon filesystems.
+
+These filesystems are rarely used and will be disabled to reduce further vulnerabilities and attack surfaces of the computer.
 ### 5. Best Practices
