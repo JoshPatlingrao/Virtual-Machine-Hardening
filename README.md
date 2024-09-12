@@ -304,4 +304,11 @@ Steps
 - Save
 
 These filesystems are rarely used and will be disabled to reduce further vulnerabilities and attack surfaces of the computer.
+
 ### 5. Best Practices
+
+A system can never be fully secure, there will always be zero-day vulnerabilities to be exploited or human errors which could compromise the system, but the latter can at least be mitigated with through education of good security practices.
+- Disable/remove protocols, applications and files you don't need.
+- Develop strong password policies through NIST guidelines.
+- Regularly update systems to patch out vulnerabilities.
+- Be mindful of information which could compromise your system.
