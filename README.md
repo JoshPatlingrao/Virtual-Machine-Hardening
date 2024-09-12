@@ -227,4 +227,30 @@ The value has been modified to 0077, giving read, write and execute permission o
 
 This can be confirmed through the 'umask -S' command which will return the symbolic notation of the read, write and execute permission.
 
+#### 4.4 DMA Attacks
+
+This configuration file is to disable to Thunderbolt and Firewire modules as these can enable DMA attacks.
+
+Steps
+- Navigate to '/etc/modprobe.d/' directory
+- Create a file and name it 'blacklist-dma.conf'
+- Open the file with a text editor
+- Write these commands and save
+  - install firewire-core /bin/true
+  - install thunderbolt /bin/true
+
+Direct Memory Access Attacks are a type of side channel attack that exploits the presence of high-speed expansion ports that permit DMA. DMA allows a connected device – such as an external storage or a camera – to transfer data between itself and the computer at the fastest speed possible through direct hardware access to read and write directly to the main memory without any interaction or supervision from the OS. If an attacker can access this channel, then they can easily bypass security mechanisms in the computer, see sensitive data and install malware or backdoors.
+
+#### 4.5 Core Dumps
+
+This configuration file is to disable core dumps.
+
+Steps
+- Navigate to '/etc/sysctl.d/' directory
+- Create a file and name it 'coredump.conf'
+- Open the file with a text editor
+- Write 'kernel.core_pattern=|/bin/false' in the file and save
+
+Core dumps contain the recorded state of the working memory of a program at a specific time, usually when that program has crashed. The information within can be very sensitive such as passwords or encryption keys, which can be used to compromise other files or accounts within the computer.
+
 ### 5. Best Practices
