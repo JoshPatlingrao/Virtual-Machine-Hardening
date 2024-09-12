@@ -25,10 +25,11 @@ Kernel hardening is a vital part of Linux security. Without these sceurity confi
 
 Sysctl is the tool that's used to permanently modify certain kernel tunables.
 
-<strong>kptr_restrict.conf</strong>
+<strong>4.1.1 kptr_restrict.conf</strong>
 
 The purpose of this configuration file is to prevent kernel pointers from being leaked. These kernel symbol addresses can be found in ‘/proc/kallsyms’. These are subject to being downloaded by an attacker who has created an account in the system and can be used for kernel exploits. 
 
+Steps
 - Navigate to '/etc/sysctl.d' directory
 - Create a file and name it 'kptr_restrict.conf'
 - Open the file with a text editor
@@ -44,5 +45,38 @@ The values for this configuration can be:
 
 Option '2' was chosen as it's the most secure out of all three and prevents attackers from seeing the kernel symbol addresses even if they get access to privileegd user accounts.
 
+<strong>4.1.2 dmesg_restrict.conf</strong>
+
+This configuration file is for restricting non-root users from viewing the kernel logs. Attackers will try to access kernel logs as it qmay contain useful information such as kernel pointers. It’s still available to root users for troubleshooting purposes.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'dmesg_restrict.conf'
+- Open the file with a text editor
+- Write 'kernel.kptr_restrict=2' in the file and save
+
+<strong>4.1.3 harden_bpf.conf</strong>
+
+This configuration file allows only the ‘root’ account to use BPF JIT compiler. Without this restriction, an attacker could easily exploit vulnerabilities such as JIT spraying to access it.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'harden_bpf.conf'
+- Open the file with a text editor
+- Write these lines, then save
+  - kernel.unprivileged_bpf_disabled=1
+  - net.core.bpf_jit_harden=2
+
+<strong>4.1.4 ptrace_scope.conf</strong>
+
+This configuration file limits the usage of ‘ptrace’ to only processes that has ‘CAP_SYS_PTRACE’.
+
+The ‘ptrace’ is a system call that allows a program to alter and inspect a running process. If an attacker gets access to the ‘ptrace’ then they can easily compromise other running programs within the computer.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'ptrace_scope.conf'
+- Open the file with a text editor
+- Write 'kernel.yama.ptrace_scope=2' in the file and save
 
 ### 5. Best Practices
