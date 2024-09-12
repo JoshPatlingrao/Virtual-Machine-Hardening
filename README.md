@@ -214,6 +214,17 @@ The number of rounds can be modified to any amount, but current setting is at 50
 
 The current password will not be automatically hashed. A new password must be generated using 'passwd username', where the 'username' part is the user account which needs to replace its current password.
 
-#### 4.3 Restricting Xorg Root Access
+#### 4.3 Umask
+
+This configuration file is to set the ‘umask’, what defines the permissions for newly created files. The default is normally set to 022, which gives read access for all users for any newly created files. Some files may contain sensitive information that has been put in there by the author.
+
+Steps
+- Navigate to '/etc/' directory
+- Open the 'login.defs' file with a text editor
+- Modify UMASK value from 022 to 0077 and save
+
+The value has been modified to 0077, giving read, write and execute permission only to the owner. This gives owner more control over who can read the files they made as they can modify their file permissions as they need while keeping its confidentiality limited to them.
+
+This can be confirmed through the 'umask -S' command which will return the symbolic notation of the read, write and execute permission.
 
 ### 5. Best Practices
