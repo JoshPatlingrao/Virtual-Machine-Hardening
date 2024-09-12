@@ -127,5 +127,46 @@ This section disables ICMP redirect sending when on a non-router.
 
 This section makes my machine ignore all ICMP requests, which an attacker can use as a DoS attack.
 
+<strong>4.1.7 mmap_aslr.conf</strong>
+
+This configuration file is to set the highest values for improve the ASLR effectiveness for ‘mmap’.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'mmap_aslr.conf'
+- Open the file with a text editor
+- Write these lines, then save
+  - vm.mmap_rnd_bits=32
+  - vm.mmap_rnd_compat_bits=16
+ 
+<strong>4.1.8 sysrq.conf</strong>
+
+This configuration file disables the Sysrq key which exposes many potentially dangerous debugging functionalities for unprivileged local users.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'sysrq.conf'
+- Open the file with a text editor
+- Write 'kernel.sysrq=0' in the file and save
+
+<strong>4.1.9 unprivileged_userns_clone.conf</strong>
+
+This configuration file disables unprivileged user namespaces, which can add a lot of attack surfaces for privilege escalation. This restricts namespaces for root users only.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'unprivileged_userns_clone.conf'
+- Open the file with a text editor
+- Write 'kernel.unprivileged_userns_clone=0' in the file and save
+
+<strong>4.1.10 tcp_sack.conf</strong>
+
+This configuration file disables TCP SACK, which is commonly exploited and but is not needed for many circumstances. Selective ACK is a type of ACK that allows endpoints to specifically communicate which packets of a large file have been lost during transmission, and allows a server to resend only those specific files again. An attacker can exploit this by keeping a long retransmission queue for an extended amount of time before processing the whole queue repeatedly which will rapidly eat up the resources of my virtual machine. Since this virtual box is only for lab purposes and no large files will be downloaded, SACK has been disabled.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'tcp_sack.conf'
+- Open the file with a text editor
+- Write 'net.ipv4.tcp_sack=0' in the file and save
 
 ### 5. Best Practices
