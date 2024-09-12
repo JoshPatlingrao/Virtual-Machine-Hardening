@@ -79,4 +79,53 @@ Steps
 - Open the file with a text editor
 - Write 'kernel.yama.ptrace_scope=2' in the file and save
 
+<strong>4.1.5 kexec.conf</strong>
+
+This configuration file is for disabling the ‘kexec’ which can be used to replace the running kernel.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'kexec.conf'
+- Open the file with a text editor
+- Write 'kernel.kexec_load_disabled=1' in the file and save
+
+<strong>4.1.6 tcp_hardening.conf</strong>
+
+This configuration file is to secure the TCP/IP stack and tighten network security options.
+
+Steps
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'tcp_hardening.conf'
+- Open the file with a text editor
+- Write 'net.ipv4.tcp_syncookies=1' in the file
+
+This section of the file is configured to help protect against SYN flood attacks from TCP connections. SYN flood attacks are a type of DoS attacks where an attackers sends a lot of SYN packages to get the end point to exhaust its resources and leave it unresponsive to legitimate traffic.
+
+- Write
+  - net.ipv4.conf.default.rp_filter=1
+  - net.ipv4.conf.all.rp_filter=1
+
+This section of the file is configured to enable source validation of packets received from all interfaces of the machine. By validating the source of the packets, it can confirm whether the packet came from a trusted server or was spoofed by an attacker.
+
+- Write
+  - net.ipv4.conf.all.accept_redirects=0
+  - net.ipv4.conf.default.accept_redirects=0
+  - net.ipv4.conf.all.secure_redirects=0
+  - net.ipv4.conf.default.secure_redirects=0
+  - net.ipv6.conf.all.accept_redirects=0
+  - net.ipv6.conf.default.accept_redirects=0
+
+This section of the file disables the ICMP redirect acceptance. This helps defend from an ICMP request that could be redirected by an attacker from anywhere they want.
+
+- Write
+  - net.ipv4.conf.all.send_redirects=0
+  - net.ipv4.conf.default.send_redirects=0
+
+This section disables ICMP redirect sending when on a non-router.
+
+- Write 'net.ipv4.icmp_echo_ignore_all=1', then save
+
+This section makes my machine ignore all ICMP requests, which an attacker can use as a DoS attack.
+
+
 ### 5. Best Practices
