@@ -27,5 +27,22 @@ Sysctl is the tool that's used to permanently modify certain kernel tunables.
 
 <strong>kptr_restrict.conf</strong>
 
+The purpose of this configuration file is to prevent kernel pointers from being leaked. These kernel symbol addresses can be found in ‘/proc/kallsyms’. These are subject to being downloaded by an attacker who has created an account in the system and can be used for kernel exploits. 
+
+- Navigate to '/etc/sysctl.d' directory
+- Create a file and name it 'kptr_restrict.conf'
+- Open the file with a text editor
+- Write 'kernel.kptr_restrict=2' in the file and save
+
+If the ‘linux-hardened’ kernel is installed then it sets the ‘kptr_restrict=2’ by default, but if the ‘linux’ kernel is installed instead then the default is set to ‘kptr_restrict=0’. Those using 'linux' kernel will need to manually configure the 'kptr_restrcit this way.
+
+The values for this configuration can be:
+- 0: which allows any user to see the kernel symbol addresses
+- 1: which hides the kernel symbol addresses from non-root users
+- 2: which hides kernel symbol addresses to all users, regardless of privileges
+- [Insert link reference]
+
+Option '2' was chosen as it's the most secure out of all three and prevents attackers from seeing the kernel symbol addresses even if they get access to privileegd user accounts.
+
 
 ### 5. Best Practices
