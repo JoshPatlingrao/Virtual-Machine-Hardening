@@ -20,7 +20,7 @@ The purpose of this lab is to setup a hardened Arch Linux installation in a virt
 ### 3. Install Arch
 
 ### 4. Configure Arch Security Configurations
-#### 4.1 Kernel - Sysctle
+#### 4.1 Kernel - Sysctl
 Kernel hardening is a vital part of Linux security. Without these sceurity configurations a base Linux kernel can be vulnerable against exploits which allows an attacker to escalate privileges and accessing sensitive files.
 
 Sysctl is the tool that's used to permanently modify certain kernel tunables.
@@ -168,5 +168,52 @@ Steps
 - Create a file and name it 'tcp_sack.conf'
 - Open the file with a text editor
 - Write 'net.ipv4.tcp_sack=0' in the file and save
+
+<strong>4.1.11 no-conntrack-helper.conf</strong>
+
+This configuration file disables the netfilter’s automatic conntrack helper assignment as it enables a lot of code in the kernel that parses incoming network patches which is potentially unsafe
+
+Steps
+- Navigate to '/etc/modprobe.d/' directory
+- Create a file and name it 'no-conntrack-helper.conf'
+- Open the file with a text editor
+- Write 'options nf_conntrack nf_conntrack_helper=0' in the file and save
+
+#### 4.2 Root Account
+
+Root accounts are privileged accounts that have full access to all of the VM's resources. Implementing multiple defensive measure is paramount to minimizing the possibility of an attacker gaining access to it.
+
+<strong>4.2.1 Restricting 'su'</strong>
+
+The 'su' is a CLI command that allows a user to switch accounts from the terminal. By default, it will try to log the user in as 'root' which easily exposes the root account to password attacks.
+
+Steps
+- Navigate to '/etc/pam.d/' directory
+- Open the 'su' file with a text editor
+- Uncomment the 'auth required pam_wheel.so use_uid' line and save
+
+<strong>4.2.2 Deny SSH Root Login</strong>
+
+This configuration file prevents anyone from connecting remotely through SSH and logging in as 'root'. While it may be convenient to use SSH to login as 'root', the benefit of preventing an attacker from doing the same outweighs the inconvenience. The VM's purpose is to be used as a lab and therefore will not contain any sensitive data which which may need to be remotely accessed which further reinforces this configuration in this case.
+
+Steps
+- Navigate to '/etc/ssh/' directory
+- Open the 'sshd_config' file with a text editor
+- Write 'PermitRootLogin no' in a new line and save
+
+<strong>4.2.3 Increase the Number of Hashing Rounds</strong>
+
+This configuration file is to ensure that the passwords will undergo multiple rounds of SHA512 hashing, making it difficult for attackers to crack in the case they steal the hashed password.
+
+Steps
+- Navigate to '/etc/pam.d/' directory
+- Open the 'system-auth' file with a text editor
+- Write 'password required pam_unix.so sha512 shadow nullok rounds=50000' in a new line and save
+
+The number of rounds can be modified to any amount, but current setting is at 50,000 rounds as a balance between functionaility and security. Larger numbers will provide better security but result in longer waiting times when logging in as the machine runs multiple hashing rounds. Smaller numbers will results in relatively faster loading times but will make it easier for attackers to crack the password.
+
+The current password will not be automatically hashed. A new password must be generated using 'passwd username', where the 'username' part is the user account which needs to replace its current password.
+
+#### 4.3 Restricting Xorg Root Access
 
 ### 5. Best Practices
