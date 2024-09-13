@@ -107,13 +107,13 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 - Go to Mirrors -> Mirror Region
 - Select the region closest to you
   - This makes ensures that whenever the OS is updated, it will pull from the mirror region specified here.
- 
+---
 - Go to Disk Configuration -> Partitioning -> Use Best Effort Default
 - Select ATA VBOX HARDDISK
   - Confirm that this is the virtual disk configured in the VM manager by looking at its disk space. It should be close to what you configured.
 - Select 'xfs' as filesystem for main partition
   - For this lab 'xfs' is chosen, but any file system can be used
- 
+---
 - Go to Bootloader
 - Select 'Grub' which should be default
 
