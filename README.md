@@ -149,7 +149,7 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 - Select your timezone
 ---
 - Go to Install to begin installation
-
+---
 <strong>Post Installation Steps</strong>
 - Select 'yes' to enter chroot environment
 - Run 'neofetch' to visually confirm instalation
