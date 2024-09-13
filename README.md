@@ -116,6 +116,55 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 ---
 - Go to Bootloader
 - Select 'Grub' which should be default
+---
+- Go to Root Password
+- Setup your password
+  - Password will not be displayed for security purposes
+  - Password strength will be displayed after entering initial password, this will based on length and characters used
+---
+- Go to User Account -> Add User
+- Enter user name
+- Setup password
+- For the purposes of this lab, make this account a superuser
+- Confirm and Exit
+---
+- Go to Profile -> Type
+- Select Desktop
+- For the purposes of this lab, select 'KDE Plasma' as desired desktop environment
+---
+- Go to Audio Server
+- Select Pipewire
+  - It offers the best quality. Pulseaudio will soon be obsolete.
+---
+- Go to Kernels
+- For the purposes of this lab, select 'linux'
+---
+- Go to Additional Packages
+- Install any additional packages you want through 'sudo package_1 package_2' this format
+---
+- Go to Network Configuration
+- Select NetworkManager
+---
+- Go to Timezone
+- Select your timezone
+---
+- Go to Install to begin installation
+
+<strong>Post Installation Steps</strong>
+- Select 'yes' to enter chroot environment
+- Run 'neofetch' to visually confirm instalation
+- Install additional tools if you want
+  - For the purposes of this lab, run 'pacman -Sy firefox libreoffice-fresh flatpak make htop' to install these tools
+- When finished, run 'exit'
+- Run 'shutdown now' to power off VM
+---
+- Go to VM Settings in VM Manager
+- Go to Storage tab
+- Under Controller:IDE, select the Arch .iso
+- Click on the disk icon at Optical Drive and select Remove Disk
+- Close Settings
+- Click Start to boot into Arch
+![image](https://github.com/user-attachments/assets/ccf52fbe-6065-47d6-a2a3-a11cf7c0ce81)
 
 ### 4. Configure Arch Security Configurations
 #### 4.1 Kernel - Sysctl
