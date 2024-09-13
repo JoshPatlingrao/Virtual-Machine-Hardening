@@ -33,6 +33,11 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 ### 2. Configure VM
 
+- Run Oracle VM Virtualbox Manager
+![image](https://github.com/user-attachments/assets/2c3f6951-e403-4748-868f-cc6d6f414e0c)
+
+- 
+
 ### 3. Install Arch
 
 ### 4. Configure Arch Security Configurations
