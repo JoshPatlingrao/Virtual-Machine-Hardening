@@ -92,6 +92,31 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 - Run 'ping archlinux.org' command
 - Wait until four replies have been received, then terminate command with Ctrl+C
 
+<strong>Synchronise Package List</strong>
+- Run 'pacman -Sy'
+
+<strong>Install Latest Keys</strong>
+- Run 'pacman -Sy archlinux-keyring'
+- Enter 'y' to confirm
+
+<strong>Arch Install</strong>
+- Run 'archinstall'
+- If command is not found, install with 'pacman -Sy archinstall'
+
+<strong>Configure Arch</strong>
+- Go to Mirrors -> Mirror Region
+- Select the region closest to you
+  - This makes ensures that whenever the OS is updated, it will pull from the mirror region specified here.
+ 
+- Go to Disk Configuration -> Partitioning -> Use Best Effort Default
+- Select ATA VBOX HARDDISK
+  - Confirm that this is the virtual disk configured in the VM manager by looking at its disk space. It should be close to what you configured.
+- Select 'xfs' as filesystem for main partition
+  - For this lab 'xfs' is chosen, but any file system can be used
+ 
+- Go to Bootloader
+- Select 'Grub' which should be default
+
 ### 4. Configure Arch Security Configurations
 #### 4.1 Kernel - Sysctl
 Kernel hardening is a vital part of Linux security. Without these sceurity configurations a base Linux kernel can be vulnerable against exploits which allows an attacker to escalate privileges and accessing sensitive files.
