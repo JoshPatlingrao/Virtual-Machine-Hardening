@@ -17,6 +17,20 @@ The purpose of this lab is to setup a hardened Arch Linux installation in a virt
 
 <a href="https://www.virtualbox.org/wiki/Downloads">Oracle VM Virtual Box</a>
 
+<a href="https://archlinux.org/download/">Arch Linux</a>
+- Go to HTTP Direct Downloads section
+- Click one of the links in Worldwide section
+- Download from 'archlinux-2024.09.01-x86_64.iso'
+
+Arch Linux File Integrity Check
+- Open 'Windows Powershell'
+- Type 'Get-Filehash' followed by a space
+- Drag the .iso file into the Powershell window
+- Run the command
+- Compare the SHA256 hash in Powershell window with the 'sha256sums.txt' in the downloads page
+
+If both hashes match then file integrity is confirmed. Otherwise some packets may ahve been dropped or lost, in which case try to re-download again.
+
 ### 2. Configure VM
 
 ### 3. Install Arch
