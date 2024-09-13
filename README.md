@@ -40,7 +40,8 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 - Name the virtual machine
 - Click on dropdown arrow on ISO Image and select the Arch .iso image
-![image](https://github.com/user-attachments/assets/c9e35526-0fc1-4763-8e34-389233761ecb)
+
+![Capture 1](https://github.com/user-attachments/assets/3b73ce53-b7a7-4a5f-9168-6907fbf663e2)
 
 
 ### 3. Install Arch
