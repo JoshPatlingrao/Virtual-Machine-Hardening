@@ -47,9 +47,19 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
   - Host machine resources will vary per person, but minimum OS requirements for Arch are as follow:
     - 512MB RAM
     - 1 Core CPU
+    - 1GB Disk Space
+  - Recommended requirements are as follow:
+    - 2GB RAM
+    - 2 - 4 Core CPU
+    - 20GB Disk Space (To enable GUI usage)
 - Click next when finished
 
 ![image](https://github.com/user-attachments/assets/6f898b44-15af-4210-9ecd-8dbf51021fd8)
+
+- Allocate virtual disk size
+  - Refer to previous section for minimum and recommended requirements
+
+![image](https://github.com/user-attachments/assets/1d022c9e-042a-45e0-923f-de775c93208d)
 
 
 ### 3. Install Arch
