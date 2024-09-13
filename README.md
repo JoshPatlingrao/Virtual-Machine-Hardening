@@ -81,6 +81,7 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 ![image](https://github.com/user-attachments/assets/c5d05092-fd09-44e4-a554-b638377d2e99)
 
+- Click Start to run the VM and begin Arch Linux setup
 
 ### 3. Install Arch
 
