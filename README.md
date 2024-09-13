@@ -44,7 +44,9 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 ![Capture 1](https://github.com/user-attachments/assets/3b73ce53-b7a7-4a5f-9168-6907fbf663e2)
 
 - Allocate base memory and processors
-  - Host machine resources will vary per person. At best, allocate at least 50% of host machine hardware
+  - Host machine resources will vary per person, but minimum OS requirements for Arch are as follow:
+    - 512MB RAM
+    - 1 Core CPU
 - Click next when finished
 
 ![image](https://github.com/user-attachments/assets/6f898b44-15af-4210-9ecd-8dbf51021fd8)
