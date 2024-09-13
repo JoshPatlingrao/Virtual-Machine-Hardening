@@ -43,6 +43,12 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 ![Capture 1](https://github.com/user-attachments/assets/3b73ce53-b7a7-4a5f-9168-6907fbf663e2)
 
+- Allocate base memory and processors
+  - Host machine resources will vary per person. At best, allocate at least 50% of host machine hardware
+- Click next when finished
+
+![image](https://github.com/user-attachments/assets/6f898b44-15af-4210-9ecd-8dbf51021fd8)
+
 
 ### 3. Install Arch
 
