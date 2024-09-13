@@ -66,6 +66,21 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 ![Capture 2](https://github.com/user-attachments/assets/bf4c1ab1-1a7d-4cab-b342-fc75535563ac)
 
+- Highlight your machine
+- Click on Settings
+- Go to General -> Advanced
+- Set Shared Clipboard to Bidirectional
+  - Makes it easier to copy and paste text between host and virtual machine
+
+![Capture 3](https://github.com/user-attachments/assets/d1968a92-dbf9-4358-a73f-a986e1a01bc2)
+
+- Got to Display
+- Max out Video Memory
+- Tick Enabled 3D Acceleration
+  - This allows the VM to use the host machine's graphics card to render 3D graphics based on OpenGL
+
+![image](https://github.com/user-attachments/assets/c5d05092-fd09-44e4-a554-b638377d2e99)
+
 
 ### 3. Install Arch
 
