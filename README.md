@@ -189,7 +189,6 @@ The values for this configuration can be:
 - 0: which allows any user to see the kernel symbol addresses
 - 1: which hides the kernel symbol addresses from non-root users
 - 2: which hides kernel symbol addresses to all users, regardless of privileges
-- [Insert link reference]
 
 Option '2' was chosen as it's the most secure out of all three and prevents attackers from seeing the kernel symbol addresses even if they get access to privileegd user accounts.
 
