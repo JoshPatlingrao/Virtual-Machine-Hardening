@@ -89,7 +89,8 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 - On boot, select the 'Arch Linux install medium (x86_64, BIOS)' option to boot into the Arch install
 
 <strong>Internet Connection Check</strong>
-- Ensure you have stable internet connection
+- Run 'ping archlinux.org' command
+- Wait until four replies have been received, then terminate command with Ctrl+C
 
 ### 4. Configure Arch Security Configurations
 #### 4.1 Kernel - Sysctl
