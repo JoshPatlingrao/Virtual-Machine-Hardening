@@ -58,8 +58,13 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 - Allocate virtual disk size
   - Refer to previous section for minimum and recommended requirements
+- Click next
 
 ![image](https://github.com/user-attachments/assets/1d022c9e-042a-45e0-923f-de775c93208d)
+
+- Confirm VM configurations and click Finish
+
+![Capture 2](https://github.com/user-attachments/assets/bf4c1ab1-1a7d-4cab-b342-fc75535563ac)
 
 
 ### 3. Install Arch
