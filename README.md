@@ -266,6 +266,8 @@ Steps
 - Open the 'sshd_config' file with a text editor
 - Write 'PermitRootLogin no' in a new line and save
 
+This section only applies if VM machine Network configuration was set to Bridged Adapter, which will allow any computer within the network to access the VM via SSH.
+
 <strong>4.2.3 Increase the Number of Hashing Rounds</strong>
 
 This configuration file is to ensure that the passwords will undergo multiple rounds of SHA512 hashing, making it difficult for attackers to crack in the case they steal the hashed password.
