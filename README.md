@@ -85,6 +85,12 @@ If both hashes match then file integrity is confirmed. Otherwise some packets ma
 
 ### 3. Install Arch
 
+<strong>Start Up</strong>
+- On boot, select the 'Arch Linux install medium (x86_64, BIOS)' option to boot into the Arch install
+
+<strong>Internet Connection Check</strong>
+- Ensure you have stable internet connection
+
 ### 4. Configure Arch Security Configurations
 #### 4.1 Kernel - Sysctl
 Kernel hardening is a vital part of Linux security. Without these sceurity configurations a base Linux kernel can be vulnerable against exploits which allows an attacker to escalate privileges and accessing sensitive files.
