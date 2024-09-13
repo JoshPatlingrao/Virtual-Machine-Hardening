@@ -15,6 +15,8 @@ The purpose of this lab is to setup a hardened Arch Linux installation in a virt
 ## Steps
 ### 1. Download VirtualBox and Arch Linux
 
+<a href="https://www.virtualbox.org/wiki/Downloads">Oracle VM Virtual Box</a>
+
 ### 2. Configure VM
 
 ### 3. Install Arch
