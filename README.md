@@ -29,7 +29,7 @@ Arch Linux File Integrity Check
 - Run the command
 - Compare the SHA256 hash in Powershell window with the 'sha256sums.txt' in the downloads page
 
-If both hashes match then file integrity is confirmed. Otherwise some packets may ahve been dropped or lost, in which case try to re-download again.
+If both hashes match then file integrity is confirmed. Otherwise some packets may have been dropped or lost, in which case try to re-download again.
 
 ### 2. Configure VM
 
