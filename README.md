@@ -1,6 +1,7 @@
 # Virtual-Machine-Hardening: Linux Edition
 
 ## Objective
+
 The purpose of this lab is to setup a hardened Arch Linux installation in a virtual machine. The skills developed in this project will be the usage of CLI, researching documentations, generating backups and applying security configurations based on the foundations of Security+.
 
 ### Skills Learned
