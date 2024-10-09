@@ -3,12 +3,12 @@
 ## Objective
 The purpose of this lab is to setup a hardened Arch Linux installation in a virtual machine. The skills developed in this project will be the usage of CLI, researching documentations, generating backups and applying security configurations based on the foundations of Security+.
 
-## Skills Learned
+### Skills Learned
 - Setting up Linux installation and configuration through CLI.
 - Researching online documentation and applying changes based on the current version of the OS.
 - Generating snapshots with brief descriptions as backups.
 
-## Tools Used
+### Tools Used
 - Oracle VM Virtual Box
 - Arch Linux
 
